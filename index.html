@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Book Store</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="book.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="row">
+
+                <div class="col-sm-6"> <img src="logo_book.png" class="my_logo" alt="congress_logo" width="200" height="200">
+                </div>
+                <div class="col-sm-6">
+                    <div class="pull-right" style="padding-top: 100px">
+                        <form action="https://api.myjson.com/bins/1h3vb3" method="GET">
+
+
+                            <div class="input-group">
+                                <input type="text" v-model="search"  onkeyup="myFunction()" class="form-control"  id="txtSearch" placeholder="Search books"  />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </header>
+        <div  class="container-fluid" id="app">
+            <div class="row centered" id="row">
+
+                <div class="col-lg-4 card" style="margin: 10px;" v-for="book in books">
+                    <div class="portada">
+                        <img v-bind:src="book.portada" class="front">
+                        <div class="back">
+                            <div class="backTitulo">{{book.titulo}}</div>
+                            <div class="backdDescripcion">{{book.descripcion}}</div>
+                            <a v-bind:href="book.detalle" class="btn btn-info"  data-fancybox="gallery">More Info</a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+        <script src="book.js"></script>
+
+    </div>
+</body>
+
+</html>

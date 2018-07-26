@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  width: 300px; height: 450px;
+  perspective: 100rem;
+}
+.front, .back {
+  position: absolute;
+  width: 270px; height: 450px;
+  transition: transform 1s;
+  backface-visibility:hidden;
+  text-align: center;
+  font-family: serif;
+    
+}
+.front { 
+  background-color: #66ccff; 
+}
+.back { 
+  background-color:beige; 
+  transform: rotateY(180deg);
+}
+.card:hover .front{ transform: rotateY(180deg); }
+.card:hover .back { transform: rotateY(360deg); }
+
+.centered {
+    text-align: center;
+    font-size: 0;
+}
+
+.centered > div {
+    float: none;
+    display: inline-block;
+    text-align: left;
+    font-size: 13px;
+}
+.backTitulo {
+    margin: 20px;
+    font-size: 20px;
+    font-family:inherit;
+    
+}
+.backdDescripcion {
+    margin: 20px;
+    text-align: justify;
+}
